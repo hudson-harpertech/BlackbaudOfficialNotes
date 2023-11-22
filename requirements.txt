@@ -1,0 +1,3 @@
+pandas
+sky-api-python-client-main.zip
+google-cloud-bigquery
