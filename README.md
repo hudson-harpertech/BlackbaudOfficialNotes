@@ -40,3 +40,25 @@ Ensure the Google Cloud SDK is installed and configured on your local machine.
   ```sh
   gcloud builds submit --tag gcr.io/[PROJECT-ID]/[IMAGE-NAME]
   ```
+3. **Push to Artifact Registry**:
+Make sure you have created an Artifact Registry repository in Google Cloud.
+   ```sh
+   gcloud auth configure-docker
+   docker push gcr.io/[PROJECT-ID]/[IMAGE-NAME]
+   ```
+4. **Deploy to Cloud Run**:
+   ```sh
+   gcloud run deploy --image gcr.io/[PROJECT-ID]/[IMAGE-NAME] --platform managed
+   ```
+
+## Usage
+1. **Configuring Advanced List Number**:
+The advanced list number in main.py should be updated to match your specific Blackbaud environment.
+
+2. **Running the Application**:
+Once deployed, the application will automatically sync official notes from Blackbaud SIS to your BigQuery table.
+
+3. **Support**
+For support, contact hudson.harper@downtownschoolseattle.org or raise an issue in the repository.
+
+Please replace `[REPO_URL]`, `[REPO_NAME]`, `[PROJECT-ID]`, `[IMAGE-NAME]`, and `[YOUR EMAIL]` with the appropriate details for your project.
